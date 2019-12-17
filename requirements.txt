@@ -2,7 +2,7 @@ wheel
 openpyxl
 # Development
 git+https://github.com/lino-framework/appypod.git#egg=appy
-Django
+Django<3
 #django-debug-toolbar
 django-extensions
 lxml
