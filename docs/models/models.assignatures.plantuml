@@ -1,0 +1,25 @@
+@startuml
+
+hide circle
+hide empty members
+
+package assignatures {
+    class AbstractTipusDAssignatura extends models.Model {
+        AMBIT_CHOICES
+        tipus_assignatura
+        ambit_on_prendre_alumnes
+        capcelera
+    }
+
+    class AbstractAssignatura extends models.Model {
+        curs
+        tipus_assignatura
+        codi_assignatura
+        nom_assignatura
+    }
+
+    class TipusDAssignatura extends AbstractTipusDAssignatura
+
+    class Assignatura extends AbstractAssignatura
+}
+@enduml

@@ -1,0 +1,42 @@
+@startuml
+hide circle
+hide empty members
+
+package horaris {
+    class AbstractDiaDeLaSetmana extends models.Model {
+        n_dia_uk
+        n_dia_ca
+        dia_2_lletres
+        dia_de_la_setmana
+        es_festiu: bool
+    }
+    class AbstractFranjaHoraria extends models.Model {
+        hora_inici
+        hora_fi
+        nom_franja
+    }
+    class AbstractHorari extends models.Model {
+        assignatura
+        professor
+        grup
+        dia_de_la_setmana
+        hora
+        nom_aula
+        es_actiu: bool
+        estat_sincronitzacio
+    }
+    class AbstractFestiu extends models.Model {
+        curs
+        data_inici_festiu
+        franga_horaria_inici
+        data_fi_festiu
+        franga_horaria_fi
+        descripcio
+    }
+
+    class DiaDeLaSetmana extends AbstractDiaDeLaSetmana
+    class FranjaHoraria extends AbstractFranjaHoraria
+    class Horari extends AbstractHorari
+    class Festu extends AbstractFestiu
+}
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+
+hide circle
+hide empty members
+
+package baixes {
+    class AbstractFeina extends models.Model {
+        impartir
+        feina_a_fer
+        professor_fa_guardia
+        comentaris_per_al_professor_guardia
+        comentaris_professor_guardia
+        professor_darrera_modificacio
+    }
+
+    class Feina extends AbstractFeina
+}
+@enduml

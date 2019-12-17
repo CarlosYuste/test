@@ -1,0 +1,48 @@
+@startuml
+hide circle
+hide empty members
+
+package presencia {
+    class AbstractImpartir extends models.Model {
+        horari
+        professor_guardia
+        professor_passa_llista
+        dia_impartir
+        dia_passa_llista
+        comentariImpartir
+        pot_no_tenir_alumnes: bool
+        reserva
+    }
+    class AbstractEstatControlAssistencia extends models.Model {
+        codi_estat
+        nom_estat
+        pct_ausencia
+    }
+    class AbstractControlAssistencia extends models.Model {
+        alumne
+        estat
+        impartir
+        professor
+        swaped
+        estat_backup
+        professor_backup
+        relacio_familia_revisada
+        relacio_familia_notificada
+    }
+    class AbstractNoHaDeSerALAula extends models.Model {
+        EXPULSAT_DEL_CENTRE
+        SORTIDA
+        ANULLADA
+        MOTIUS_CHOICE
+        motiu
+        control
+        sancio
+        sortida
+    }
+    class Impartir extends AbstractImpartir
+    class EstatControlAssistencia extends AbstractEstatControlAssistencia
+    class ControlAssistencia extends AbstractControlAssistencia
+    class NoHaDeSerALAula extends AbstractNoHaDeSerALAula
+}
+
+@enduml

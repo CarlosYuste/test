@@ -1,0 +1,30 @@
+@startuml
+
+hide circle
+hide empty members
+
+package aules {
+    class AbstractAula extends models.Model {
+        nom_aula
+        descripcio_aula
+        disponibilitat_horaria
+        horari_lliure
+        reservable
+    }
+
+    class AbstractReservaAula extends models.Model {
+        aula
+        dia_reserva
+        hora_inici
+        hora_fi
+        hora
+        usuari
+        motiu
+        es_reserva_manual
+    }
+
+    class Aula extends AbstractAula
+
+    class ReservaAula extends AbstractReservaAula
+}
+@enduml

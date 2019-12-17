@@ -1,0 +1,92 @@
+@startuml
+
+hide circle
+hide empty members
+
+package tutoria {
+    class AbstractSeguimentTutorial extends models.Model {
+        alumne
+        nom
+        cognoms
+        datadarreraactualitzacio
+        data_neixement
+        informacio_de_primaria
+    }
+
+    class AbstractResumAnualAlumne extends models.Model {
+        seguiment_tutorial
+        curs_any_inici
+        text_resum
+    }
+
+    class AbstractSeguimentTutorialPreguntes extends models.Model {
+        pregunta
+        ajuda_pregunta
+        es_pregunta_oberta
+        possibles_respostes
+    }
+
+    class AbstractSeguimentTutorialRespostes extends models.Model {
+        seguiment_tutorial
+        any_curs_academic
+        pregunta
+        resposta
+        ordre
+        professorQueInforma
+    }
+
+    class AbstractActuacio extends models.Model {
+        alumne
+        professional
+        moment_actuacio
+        qui_fa_actuacio
+        amb_qui_es_actuacio
+        assumpte
+        actuacio
+    }
+
+    class AbstractTutor extends models.Model {
+        professor
+        grup
+    }
+
+    class AbstractTutorIndividualitzat extends models.Model {
+        professor
+        alumne
+    }
+
+    class AbstractCartaAbsentisme extends models.Model {
+        alumne
+        carta_numero
+        tipus_carta
+        faltes_fins_a_data
+        faltes_des_de_data
+        professor
+        data_carta
+        faltes_incloses
+        carta_esborrada_moment
+        nfaltes
+        impresa
+    }
+
+    class SeguimentTutorial extends AbstractSeguimentTutorial
+
+    class ResumAnualAlumne extends AbstractResumAnualAlumne
+
+    class SeguimentTutorialPreguntes extends AbstractSeguimentTutorialPreguntes
+
+    class SeguimentTutorialRespostes extends AbstractSeguimentTutorialRespostes
+
+    class Actuacio extends AbstractActuacio
+
+    class Tutor extends AbstractTutor
+
+    class TutorIndividualitzat extends AbstractTutorIndividualitzat
+
+    class CartaAbsentisme extends AbstractCartaAbsentisme
+
+
+}
+@enduml
+
+

@@ -1,0 +1,15 @@
+@startuml
+hide circle
+hide empty members
+
+package extSaga {
+    class Grup2Auls extends models.Model  {
+        grup_saga
+        Grup2Aula
+    }
+    class ParametreSaga extends models.Model {
+        nom_parametre
+        valor_parametre
+    }
+}
+@enduml

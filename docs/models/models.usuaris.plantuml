@@ -1,0 +1,54 @@
+@startuml
+hide circle
+hide empty members
+
+package usuaris {
+    class AbstractOneTimePasswd extends models.Model {
+        usuari
+        moment_expedicio
+        clau
+        reintents
+    }
+
+    class AbstractDepartament extends models.Model {
+        codi
+        nom
+    }
+
+    class AbstractAccio extends models.Model {
+        tipus
+        usuari
+        impersonated_from: User
+        moment
+        l4
+        text
+    }
+
+    class AbstractLoginUsuari extends models.Model {
+        exitos: bool
+        usuari
+        moment
+        ip
+    }
+    class AbstractOneTimePassword extends models.Model {
+        usuari
+        moment_expedicio
+        clau
+        reintents
+    }
+
+    class Departament extends AbstractDepartament
+    class AlumneUsermanager extends models.Manager
+    class AlumneUser extends User
+    class ProfessorManager extends models.Manager
+    class Professor extends User
+    class ProfessorConsergeManager extends models.Manager
+    class ProfessorConserge extends User
+    class ProfessionalManager extends models.Manager
+    class Professional extends User
+    class Accio extends AbstractAccio
+    class LoginUsuari extends AbstractLoginUsuari
+    class OneTimePasswd extends AbstractOneTimePassword
+
+}
+@enduml

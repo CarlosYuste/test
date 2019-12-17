@@ -1,0 +1,41 @@
+@startuml
+
+hide circle
+hide empty members
+
+
+package avaluacioQualitativa {
+    class AbstractItemQualitativa extends models.Model {
+        codi_agrupacio
+        text
+        nivells
+    }
+
+    class AbstractAvaluacioQualitativa extends models.Model {
+        nom_avaluacio
+        data_obrir_avaluacio
+        data_tancar_avaluacio
+        grups
+        data_obrir_portal_families
+        data_tancar_tancar_portal_families
+    }
+
+    class AbstractRespostaAvaluacioQualitativa extends models.Model {
+        qualitativa
+        alumne
+        professor
+        assignatura
+        item
+        frase_oberta
+        relacio_familia_revisada
+        relacio_familia_notificada
+    }
+
+    class ItemQualitativa extends AbstractItemQualitativa
+
+    class AvaluacioQualitativa extends AbstractAvaluacioQualitativa
+
+    class RespostaAvaluacioQualitativa extends AbstractRespostaAvaluacioQualitativa
+}
+
+@enduml

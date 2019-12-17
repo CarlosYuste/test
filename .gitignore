@@ -21,3 +21,6 @@ aula/settings_local.py
 .idea/*
 .idea
 aula/static
+*~
+.*.swp
+.~lock.*#

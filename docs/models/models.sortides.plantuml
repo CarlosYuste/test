@@ -1,0 +1,55 @@
+@startuml
+hide circle
+hide empty members
+
+package sortides {
+    class Sortida extends models.Model {
+        estat
+        estat_sincronitzacio
+        tipus
+        titol_de_la_sortida
+        ambit
+        ciutat
+        esta_aprovada_pel_consell_escolar
+        departament_que_organitza
+        comentari_organitza
+        alumnes_a_l_aula_amb_professor_titular
+        data_inici
+        franja_inici
+        data_fi
+        franja_fi
+        calendari_desde
+        calendari_finsa
+        calendari_public
+        materia
+        preu_per_alumne
+        codi_de_barres
+        informacio_pagament
+        tipus_de_pagament
+        termini_de_pagament
+        programa_de_la_sortida
+        condicions_generals
+        participacio
+        mitja_de_transport
+        empresa_de_transport
+        pagament_a_empresa_de_transport
+        pagament_a_altres_empreses
+        feina_per_als_alumnes_aula
+        comentaris_interns
+        professor_que_proposa
+        professors_responsables
+        altres_professors_acompanyants
+        tutors_alumnes_convocats
+        alumnes_convocats
+        alumnes_que_no_vindran
+        alumnes_justificacio
+    }
+    class NotificaSortida extends models.Model {
+        alumne
+        sortida
+        relacio_familia_revisada
+        relacio_familia_notificada
+    }
+}
+
+@enduml

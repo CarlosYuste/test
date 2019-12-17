@@ -1,0 +1,20 @@
+@startuml
+
+hide circle
+hide empty members
+
+package extSaga {}
+package presencia {}
+package sortides {}
+package horaris {}
+package usuaris {}
+package incidencies {}
+package alumnes {}
+package missatgeria {}
+package baixes {}
+package tutoria {}
+package AvaluacioQualitativa {}
+package aules {}
+package assignatures {}
+
+@enduml

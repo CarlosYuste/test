@@ -1,0 +1,34 @@
+@startuml
+
+hide circle
+hide empty members
+
+package missatgeria {
+    class AbstractMissatge extends models.Model {
+        data
+        remitent
+        text_missatge
+        enllac
+        tipus_de_missatge
+    }
+    class AbstractDetallMissatge extends models.Model {
+        TIPUS_CHOICES
+        missatge
+        detall
+        tipus
+    }
+    class AbstractDestinatari extends models.Model {
+        importancia_VI, importancia_IN, importancia_PI
+        IMPORTANCIA_CHOICES
+        missatge
+        importancia
+        destinatari
+        moment_lectura
+        followed
+    }
+
+    class Missatge extends AbstractMissatge
+    class DetallMissatge extends AbstractDetallMissatge
+    class Destinatari extends AbstractDestinatari
+}
+@enduml

@@ -1,0 +1,74 @@
+@startuml
+
+hide circle
+hide empty members
+
+package alumnes {
+    class AbstractNivell extends models.Model {
+        nom_nivell
+        ordre_nivell
+        descripcio_nivell
+        anotacions_nivell
+    }
+
+    class AbstractCurs extends models.Model {
+        nivell
+        nom_curs
+        data_inici_curs
+        data_fi_curs
+    }
+
+    class AbstractGrup extends models.Model {
+        curs
+        nom_grup
+        descripcio_grup
+    }
+
+    class AbstractAlumne extends models.Model {
+        ralc
+        grup
+        nom
+        cognoms
+        data_neixement
+        estat_sincronitzacio
+        correu_tutors
+        correu_relacio_familia_pare
+        correu_relacio_familia_mare
+        motiu_bloqueig
+        tutors_volen_rebre_correu
+        centre_de_procedencia
+        localitat
+        municipi
+        cp
+        telefons
+        tutors
+        adreca
+        correu
+        rp1_nom
+        rp1_telefon
+        rp1_mobil
+        rp1_correu
+        rp2_nom
+        rp2_telefon
+        rp2_mobil
+        rp2_correu
+        altres_telefons
+        data_alta
+        data_baixa
+        user_associat
+        relacio_familia_darrera_notificacio
+        periodicitat_faltes
+        periodicitat_incidencies
+    }
+
+    class Nivell extends AbstractNivell
+    class Curs extends AbstractCurs
+    class Grup extends AbstractGrup
+    class Alumne extends AbstractAlumne
+    class AlumneGrupNomManager extends models.Manager
+    class AlumneGrupNom extends Alumne
+    class AlumneGrup extends Alumne
+
+}
+
+@enduml

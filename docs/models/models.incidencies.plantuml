@@ -1,0 +1,115 @@
+@startuml
+
+hide circle
+hide empty members
+
+package incidencies {
+    class AbstractFrassesIncidenciaAula extends models.Model {
+        tipus
+        frase
+    }
+    class AbstractTipusSancio extends models.Model {
+        tipus
+        carta_slug
+        justificar
+    }
+    class AbstractSancio extends models.Model {
+        professor
+        alumne
+        tipus
+        data_inici
+        franja_inici
+        data_fi
+        franja_fi
+        data_carta
+        motiu
+        obra_expedient
+        comentaris_cap_d_estudis
+        signat
+        impres
+        relacio_familia_revisada
+        relacio_familia_notificada
+    }
+    class AbstractExpulsio extends models.Model {
+        ESTAT_CHOICES
+        estat
+        professor_recull
+        professor
+        control_assistencia
+        alumne
+        dia_expulsio
+        franja_expulsio
+        motiu
+        moment_comunicacio_a_tutors
+        tutor_contactat_per_l_expulsio
+        tramitacio_finalitzada
+        comentaris_cap_d_estudis
+        provoca_sancio
+        es_expulsio_per_acumulacio_incidencies
+        es_vigent
+        relacio_familia_revisada
+        relacio_familia_notificada
+    }
+    class AbstractTipusIncidencia extends models.Model {
+        tipus
+        es_informativa
+        notificar_equip_directiu
+    }
+    class AbstractIncidencia extends models.Model {
+        GESTIONADA_PEL_TUTOR_RETARD_PRIMERA_HORA
+        GESTIONADA_PEL_TUTOR_FORA_AULA
+        GESTIONADA_PEL_TUTOR_GUARDIA
+        GESTIONADA_PEL_TUTOR_ALTRES
+        INFO_GESTIONADA_PEL_TUTOR
+        GESTIONADA_PEL_TUTOR_CHOICES
+        professional
+        alumne
+        tipus
+        control_assistencia
+        dia_incidencia
+        franja_incidencia
+        descripcio_incidencia
+        provoca_expulsio
+        es_vigent
+        gestionada_pel_tutor
+        gestionada_pel_tutor_motiu
+        professional_inicia
+        provoca_sancio
+        relacio_familia_revisada
+        relacio_familia_notificada
+    }
+
+    class AbstractBaseUser extends models.Model {
+        password
+        last_login
+        is_active
+    }
+
+    class PermissionsMixin {
+        is_superuser: bool
+        groups
+        user_permissions
+    }
+
+    class AbstractUser extends AbstractBaseUser, PermissionsMixin {
+        username_validator
+        username
+        first_name
+        last_name
+        email
+        is_staff
+        is_active
+        date_joined
+        objects
+        EMAIL_FIELD
+        USERNAME_FIELD
+        REQUIRED_FIELDS
+    }
+    class FrassesIncidenciaAula extends AbstractFrassesIncidenciaAula
+    class TipusSancio extends AbstractTipusSancio
+    class Sancio extends AbstractSancio
+    class Expulsio extends AbstractExpulsio
+    class TipusIncidencia extends AbstractTipusIncidencia
+    class Incidencia extends AbstractIncidencia
+}
+@enduml
